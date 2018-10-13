@@ -4,7 +4,7 @@ var say = function (name) {
     div.style.height = "100px";
     div.style.background = "red";
     div.style.color = "white";
-    div.innerHTML = "gg";
+    div.innerHTML = "hello World";
 
     document.body.appendChild(div);
     //return say();   
