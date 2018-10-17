@@ -1,2 +1,4 @@
-import say from './lib/test.js';
-say('m');
+import say from './lib/test';
+
+// const t = "YY";
+say('Hello world!');
