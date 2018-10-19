@@ -1,10 +1,18 @@
-input {
-	border: 0;
-	outline: none;
-	width: calc(100% - 2px);
+input { 
+        /*display: flex;
+        top: 91.25%;
+        flex-basis: 100%;
+	position: relative;
+        border: 1px solid black;
+        flex-direction: row;
+        background-color: white;*/
+        border: 0;
+        outline: none;
+        flex-basis: 75%;
+        align-self: center;
 }
 
-:host {
+:host { 
 	display: inline-block;
 	border: 1px solid rgba(25, 25, 25, 0.32);
 }

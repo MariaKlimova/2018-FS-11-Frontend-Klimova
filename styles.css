@@ -1,0 +1,56 @@
+.text_div {
+  position:absolute;
+  text-align:center;
+  width: 20px;
+  height: 100 px;
+  background-color: red;
+}  
+
+#container {
+  position: absolute;
+  box-sizing: content-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#message_panel{
+  display: flex;
+}
+
+#top{
+  height: 24 dp;
+  background-color: red;
+}
+
+.top-inf{
+  height: 56 dp;
+  background-color: red;
+}
+
+.base{
+  display: flex;
+  flex: auto;
+  background-color: white;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+#down{
+  display:flex;
+  padding:0;
+  margin:0;
+  height: 56dp;
+  background-color: #ffffff;
+  justify-content: space-between;
+}
+
+.shaped{
+  margin-left: auto;
+  margin-bottom: 10 px;
+  background-color: #f3e5f5;
+  height: 80px;
+  width: 75%;
+  border-radius: 5px;
+}
