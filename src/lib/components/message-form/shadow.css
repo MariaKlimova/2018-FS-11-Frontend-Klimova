@@ -1,9 +1,38 @@
 form-input {
-	width: 100%;
+        display:inline-flex;
+        justify-content: space-around;
+        flex-basis: 10%;
+        /*height: -webkit-fill-available;
+        flex-direction: row;
+        background-color: white ;*/
+        order: 0;
+        width: 100%;
+        background: #fbfbfb;
+
 }
 
+form{
+        display:flex;
+        flex-direction:column;
+        height: 100vh;
+        justify-content: flex-end;
+        align-items: flex-end;
+        background: #f0f0f0;
+    
+}
 .result {
-	color: red;
+        display: flex;
+        flex-direction: column-reverse;
+        flex-basis: 1%;
+        height: 10%;
+        background-color: #f3e5f5;
+        min-height: min-content;
+        height: fit-content;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 20px;
+        max-width: 75%;
+	color: black;
 }
 
 input[type=submit] {
