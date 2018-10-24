@@ -36,5 +36,5 @@ form{
 }
 
 input[type=submit] {
-	visibility: collapse;
+	/*visibility: collapse;*/
 }

@@ -36,9 +36,11 @@ class MessageForm extends HTMLElement {
 	_initElements () {
 		var form = this.shadowRoot.querySelector('form');
 		var message = this.shadowRoot.querySelector('.result');
-		this._elements = {
+		//var history = array
+                this._elements = {
 			form: form,
-			message: message
+                        message: message, 
+			
 		};
 	}
 
@@ -49,9 +51,23 @@ class MessageForm extends HTMLElement {
 	}
 
 	_onSubmit (event) {
-		this._elements.message.innerText = Array.from(this._elements.form.elements).map(
-			el => el.value
-		).join(', ');
+
+                //var message_local = document.CreateElement(".result");
+                var message = this.ShadowRoot.querySelector('.result')
+                var form = this.ShadowRoot.querySelector('form')
+                this._elements = {
+                        form: form,
+                        message: message,
+                }
+              
+                this._elements.message.innerText =  Array.from(this._elements.form.elements).map(
+                        el => el.value
+                ).join(', ');
+                this._elements.form.appendChild(message)
+
+
+
+
 		event.preventDefault();
 		return false;
 	}
