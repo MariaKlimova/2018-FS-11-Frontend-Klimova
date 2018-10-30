@@ -53,16 +53,37 @@ class MessageForm extends HTMLElement {
 
          var messageList = document.body.querySelector('.message-list');
          //messageList.scrollTop = messageList.scrollHeight;
-
-         const newMessage = document.createElement('div');
-         newMessage.className = 'result';
-         newMessage.innerText = Array.from(this._elements.form.elements).map(
+         
+         const text = Array.from(this._elements.form.elements).map(
           el => el.value,
          ).join(', ');
          
-         messageList.appendChild(newMessage);
-		event.preventDefault();
-		return false;
+         if (text != '') {
+             const newMessage = document.createElement('div');
+             newMessage.className = 'result';
+
+             if ((text.startsWith('/nm')) && (text != '/nm')) {
+                 newMessage.style.color = 'green';
+                 newMessage.style.alignSelf = 'flex-start';
+                 newMessage.style.textAlign = 'left';
+                 newMessage.innerText = text.substring(4);
+
+                 messageList.appendChild(newMessage);
+             }
+             else {
+                 newMessage.innerText = text;       
+                 messageList.appendChild(newMessage);
+             }     
+         }
+         //const newMessage = document.createElement('div');
+         //newMessage.className = 'result';
+         //newMessage.innerText = Array.from(this._elements.form.elements).map(
+         // el => el.value,
+         //).join(', ');
+         
+         //messageList.appendChild(newMessage);
+	//	event.preventDefault();
+	return false;
 	}
 
 	_onKeyPress (event) {
