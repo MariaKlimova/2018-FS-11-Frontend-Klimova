@@ -25,7 +25,15 @@ body
 {
         background-color: #f0f0f0
 }
+.message-file {
+        display: none;
+}
 
+.pin-file-icon{
+        max-height: 5vh;
+        background-color: #fbfbfb;
+        border: 2px solid black
+}
 .result {
         display: flex;
         flex-direction: column-reverse;

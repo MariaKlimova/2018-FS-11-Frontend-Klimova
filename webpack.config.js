@@ -4,7 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const sourceRoot = path.resolve(__dirname, 'src');
 
 module.exports = {
-	entry: {
+
+	devtool: 'source-map',
+        entry: {
 		create: sourceRoot + '/app/create/index.js'
 	},
 	output: {

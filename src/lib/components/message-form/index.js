@@ -7,7 +7,6 @@ const template = `
 	<style>${shadowStyles.toString()}</style>
 	<form>
 		<form-input name="message_text" placeholder="Введите сообщеине" slot="message-input">
-			<span slot="icon"></span>
 		</form-input>
 	</form>
 `;
@@ -33,21 +32,30 @@ class MessageForm extends HTMLElement {
 	}
 
 	_initElements () {
-		var form = this.shadowRoot.querySelector('form');
-		var message = this.shadowRoot.querySelector('.result');
-		//var history = array
+		const form = this.shadowRoot.querySelector('form');
+		const message = this.shadowRoot.querySelector('.result');
+		const sendFile = document.body.querySelector('#file_input');
                 this._elements = {
-			form: form,
-                        message: message, 
-			
+			form,
+                        message, 
+			sendFile
 		};
 	}
 
 	_addHandlers () {
 		this._elements.form.addEventListener('submit', this._onSubmit.bind(this));
 		this._elements.form.addEventListener('keypress', this._onKeyPress.bind(this));
-		//this._elements.inputSlot.addEventListener('slotchange', this._onSlotChange.bind(this));
+		this._elements.sendFile.addEventListener('change', this._onAddFile.bind(this));
 	}
+       
+        _onAddFile(event) {
+        const file = document.querySelector('#file_input').files[0];
+            if (file.type.startsWith('image')) {
+                const messageList = document.querySelector('.message-list')
+                alert(image)
+            }
+        this._newOutgoingMessage('"'+file.name+ '"\n '+file.type + '\n' + file.size + "B");
+        }
 
 	_onSubmit (event) {
 
@@ -62,11 +70,11 @@ class MessageForm extends HTMLElement {
              const newMessage = document.createElement('div');
              newMessage.className = 'result';
 
-             if ((text.startsWith('/nm')) && (text != '/nm')) {
+             if ((text.startsWith('#')) && (text != '#')) {
                  newMessage.style.color = 'green';
                  newMessage.style.alignSelf = 'flex-start';
                  newMessage.style.textAlign = 'left';
-                 newMessage.innerText = text.substring(4);
+                 newMessage.innerText = text.substring(1);
 
                  messageList.appendChild(newMessage);
              }

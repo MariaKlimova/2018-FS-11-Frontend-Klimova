@@ -11,6 +11,9 @@ input {
         flex-basis: 75%;
         align-self: center;
 }
+form-input{
+        width : 100 %;
+}
 
 :host { 
 	display: inline-block;
