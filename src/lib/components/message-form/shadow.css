@@ -52,6 +52,14 @@ body
         width: 100vw;
 }
 
+.message-file {
+        display: none;
+}
+
+.pin-file-icon {
+        border: 2px solid black;
+        max-height: 5vh;
+}
 input[type=submit] {
 	/*visibility: collapse;*/
 }

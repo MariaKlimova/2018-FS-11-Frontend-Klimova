@@ -1,3 +1,21 @@
+input { 
+        /*display: flex;
+        top: 91.25%;
+        flex-basis: 100%;
+        position: relative;
+        border: 1px solid black;
+        flex-direction: row;
+        background-color: white;*/
+        border: 0;
+        outline: none;
+        flex-basis: 75%;
+        align-self: center;
+}
+
+:host { 
+        display: inline-block;
+        border: 1px solid rgba(25, 25, 25, 0.32);
+}
 form-input {
         display:inline-flex;
         justify-content: space-around;
@@ -25,6 +43,7 @@ body
 {
         background-color: #f0f0f0
 }
+
 .message-file {
         display: none;
 }

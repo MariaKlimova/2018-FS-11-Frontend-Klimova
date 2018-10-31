@@ -7,6 +7,7 @@ const template = `
 	<style>${shadowStyles.toString()}</style>
 	<form>
 		<form-input name="message_text" placeholder="Введите сообщеине" slot="message-input">
+                        <span slot="icon"></span>
 		</form-input>
 	</form>
 `;
@@ -34,10 +35,10 @@ class MessageForm extends HTMLElement {
 	_initElements () {
 		const form = this.shadowRoot.querySelector('form');
 		const message = this.shadowRoot.querySelector('.result');
-		const sendFile = document.body.querySelector('#file_input');
+		const sendFile = document.body.querySelector('.message-file');
                 this._elements = {
-			form,
-                        message, 
+			form: form,
+                        message: message, 
 			sendFile
 		};
 	}
@@ -49,12 +50,12 @@ class MessageForm extends HTMLElement {
 	}
        
         _onAddFile(event) {
-        const file = document.querySelector('#file_input').files[0];
+        /*const file = document.querySelector('#file_input').files[0];
             if (file.type.startsWith('image')) {
                 const messageList = document.querySelector('.message-list')
-                alert(image)
-            }
-        this._newOutgoingMessage('"'+file.name+ '"\n '+file.type + '\n' + file.size + "B");
+                alert(image)*/
+//            }
+//        this._newOutgoingMessage('"'+file.name+ '"\n '+file.type + '\n' + file.size + "B");
         }
 
 	_onSubmit (event) {
